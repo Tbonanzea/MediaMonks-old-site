@@ -3,6 +3,7 @@ const main = () => {
 	const back = document.getElementById('back');
 	const backgroundImage = document.getElementById('backgroundImage');
 	const nav = document.getElementById('nav');
+	const loader = document.getElementById('loaderContainer');
 	const transitionPercentages = [
 		0,
 		-10.225,
@@ -19,7 +20,7 @@ const main = () => {
 	let previousNavIndex = 0;
 
 	setTimeout(() => {
-		document.getElementById('loaderContainer').style.visibility = 'hidden';
+		loader.style.visibility = 'hidden';
 
 		const arrowsVisibility = () => {
 			if (navIndex === 0) {
