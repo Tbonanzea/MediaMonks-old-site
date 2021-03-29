@@ -70,7 +70,7 @@
 }
 
 .jump {
-	animation: jump 1s linear alternate infinite;
+	animation: jump 0.8s linear alternate infinite;
 	width: 7rem;
 	height: auto;
 }
