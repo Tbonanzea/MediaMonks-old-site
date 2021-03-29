@@ -1,0 +1,380 @@
+@font-face {
+	font-family: 'klavika';
+	src: url('../assets/fonts/klavika-regular-webfont.woff') format('woff');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'klavika-bold';
+	src: url('../assets/fonts/klavika-bold-webfont.woff') format('woff');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'klavika-medium';
+	src: url('../assets/fonts/klavika-medium-webfont.woff') format('woff');
+	font-weight: 550;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'klavika-light';
+	src: url('../assets/fonts/klavika-light-webfont.woff') format('woff');
+	font-weight: 250;
+	font-style: normal;
+}
+
+* {
+	font-family: 'klavika', sans-serif;
+	padding: 0;
+	margin: 0;
+	color: #fff;
+}
+
+.wrapper {
+	display: flex;
+	overflow: hidden;
+}
+
+#loaderContainer {
+	display: flex;
+	z-index: 300;
+	background-color: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: 1100ms ease-in-out;
+	justify-content: center;
+	align-items: center;
+}
+
+#loaderContainer > div {
+	display: flex;
+	flex-flow: column;
+	text-align: center;
+	height: 80%;
+	width: 25%;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes jump {
+	0% {
+		transform: translate3d(0, -12%, 0);
+	}
+	100% {
+		transform: translate3d(0, -5%, 0);
+	}
+}
+
+.jump {
+	animation: jump 1s linear alternate infinite;
+	width: 7rem;
+	height: auto;
+}
+
+.background-container {
+	width: 100vw;
+	height: 100vh;
+}
+
+#backgroundImage {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	z-index: 1;
+	transition: 1100ms ease-in-out;
+}
+
+#next,
+#back {
+	font-size: 120px;
+	width: 100px;
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 100ms ease-in-out;
+}
+
+#next {
+	right: 0;
+}
+
+#back {
+	left: 0;
+}
+
+#next:hover,
+#back:hover {
+	color: gray;
+	width: 80px;
+	transition: 100ms ease-in-out;
+}
+
+#next > a,
+#back > a {
+	text-decoration: none;
+}
+
+#next > a:hover,
+#back > a:hover {
+	color: gray;
+}
+
+#nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+	position: fixed;
+	bottom: 1.5rem;
+	left: 3rem;
+	z-index: 15;
+}
+
+.nav-item {
+	padding: 0.1rem;
+	width: 1.5rem;
+	height: auto;
+	border: dotted 2px;
+	border-left: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.nav-item:nth-child(1) {
+	border-left: dotted 2px;
+}
+
+.nav-item:hover {
+	text-decoration: underline;
+}
+
+.nav-item > a,
+.nav-item > a > p {
+	text-decoration: none;
+	text-align: center;
+	width: 100%;
+}
+
+.clicked-nav {
+	background: #fff;
+}
+
+.logo {
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	right: 3rem;
+	z-index: 10;
+	width: 8rem;
+	height: 8rem;
+}
+
+section {
+	display: flex;
+	opacity: 0;
+	z-index: 10;
+	transition: 500ms ease-in-out;
+	visibility: hidden;
+}
+
+section > h2 {
+	position: fixed;
+	font-size: 3rem;
+	text-decoration: underline;
+	font-weight: 200;
+}
+
+#section0 > small {
+	bottom: 7rem;
+	left: 3rem;
+}
+
+section > small {
+	position: fixed;
+	bottom: 1.7rem;
+	left: 22.2rem;
+}
+
+#section9 {
+	background-color: #272727;
+	width: 304%;
+}
+
+#section9 > div {
+	position: fixed;
+	top: 43%;
+	right: 1.5%;
+	justify-content: right;
+	text-align: right;
+}
+
+#links {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+#links > a {
+	margin-left: 1.5rem;
+}
+
+#section0 > h2 {
+	top: 1%;
+	left: 1.2%;
+}
+
+#section1 > h2,
+#section2 > h2,
+#section6 > h2,
+#section7 > h2,
+#section8 > h2 {
+	top: 42%;
+	left: 7%;
+}
+
+#section3 > h2,
+#section4 > h2 {
+	z-index: 200;
+	top: 42%;
+	right: 7%;
+	text-align: right;
+}
+
+#section5 > h2 {
+	top: 32.9%;
+	right: 7%;
+	text-align: right;
+}
+
+#section9 > h2 {
+	top: 1%;
+	right: 1.5%;
+	text-align: right;
+}
+
+@media screen and (min-width: 960px) and (max-width: 1200px) {
+	#section1 > h2,
+	#section2 > h2,
+	#section6 > h2,
+	#section7 > h2,
+	#section8 > h2 {
+		top: 42%;
+		left: 9%;
+	}
+
+	#section3 > h2,
+	#section4 > h2 {
+		z-index: 200;
+		top: 42%;
+		right: 9%;
+		text-align: right;
+	}
+
+	#section5 > h2 {
+		top: 32.9%;
+		right: 9%;
+		text-align: right;
+	}
+}
+
+@media screen and (max-width: 959px) {
+	section > small {
+		bottom: 4rem;
+		left: 3rem;
+	}
+
+	#section1 > h2,
+	#section2 > h2,
+	#section5 > h2,
+	#section6 > h2,
+	#section7 > h2,
+	#section8 > h2 {
+		top: 1%;
+		left: 15%;
+	}
+
+	#section3 > h2,
+	#section4 > h2 {
+		top: 1%;
+		right: 15%;
+	}
+
+	#section5 > h2 {
+		top: 32.9%;
+		text-align: start;
+	}
+}
+
+@media screen and (max-width: 659px) {
+	#next,
+	#back {
+		font-size: 100px;
+		width: 70px;
+	}
+
+	#next:hover,
+	#back:hover {
+		width: 60px;
+	}
+
+	#nav {
+		left: 5rem;
+		width: 10rem;
+	}
+
+	.logo {
+		bottom: 0.5rem;
+		right: 5rem;
+		width: 4rem;
+		height: 4rem;
+	}
+
+	section > h2 {
+		font-size: 2.5rem;
+	}
+
+	#section0 > small {
+		width: 18rem;
+	}
+
+	section > small {
+		width: 10rem;
+		bottom: 4rem;
+		left: 5rem;
+	}
+
+	#section1 > h2,
+	#section2 > h2,
+	#section6 > h2,
+	#section7 > h2,
+	#section8 > h2 {
+		top: 1%;
+		left: 15%;
+		right: 15%;
+	}
+
+	#section2 > h2 {
+		top: 35%;
+	}
+
+	#section3 > h2,
+	#section4 > h2,
+	#section5 > h2 {
+		top: 26%;
+		right: 15%;
+		left: 15%;
+	}
+
+	#section9 > div {
+		width: 80%;
+	}
+}
